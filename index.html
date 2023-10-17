@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input id="inpu" type="text" placeholder="Add Text...">
+    <button id="butto" onclick="cli()">Add</button>
+    <div id="div"></div>
+
+    <script>
+        function cli(){
+            var myText = document.createTextNode(document.getElementById("inpu").value)
+            var myLi = document.createElement("li")
+            var mySection = document.createElement("Section")
+            myLi.appendChild(myText)
+            mySection.appendChild(myLi)
+            document.getElementById("div").appendChild(mySection)
+            }
+    </script>
+</body>
+</html>
