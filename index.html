@@ -7,19 +7,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input id="inpu" type="text" placeholder="Add Text...">
+    <main>
+        <h1>TO-DO LIST</h1>
+        <input id="inpu" type="text" placeholder="Add Text...">
+        <button id="butto" onclick="cli()">Add</button>
+        <div id="div"></div>
+    </main>
+
+    <!-- <input id="inpu" type="text" placeholder="Add Text...">
     <button id="butto" onclick="cli()">Add</button>
-    <div id="div"></div>
+    <div id="div"></div> -->
 
     <script>
         function cli(){
             var myText = document.createTextNode(document.getElementById("inpu").value)
-            var myLi = document.createElement("li")
+            var myInpu = document.createElement("input")
+            myInpu.setAttribute("type", "checkbox")
+            myInpu.setAttribute("id", "myCheckbox")
             var mySection = document.createElement("Section")
-            myLi.appendChild(myText)
-            mySection.appendChild(myLi)
+            mySection.setAttribute("id", "sect")
+            mySection.appendChild(myInpu)
+            mySection.appendChild(myText)
             document.getElementById("div").appendChild(mySection)
+
+            myInpu.onclick = function(){
+                        if(myInpu.checked){
+                        mySection.style.textDecoration = "line-through"
+                    }
+                    else{
+                        mySection.style.textDecoration = "none"
+                    }
+                }
             }
+
     </script>
 </body>
 </html>
