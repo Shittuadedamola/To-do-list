@@ -9,7 +9,7 @@
 <body>
     <main>
         <h1>TO-DO LIST</h1>
-        <input id="inpu" type="text" placeholder="Add Text...">
+        <input id="inpu" type="text" placeholder="Add Task...">
         <button id="butto" onclick="cli()">Add</button>
         <div id="div"></div>
     </main>
@@ -38,7 +38,21 @@
                         mySection.style.textDecoration = "none"
                     }
                 }
+
+            var xButton = document.createElement("button")
+            var xText = document.createTextNode("x")
+            xButton.appendChild(xText)
+            mySection.appendChild(xButton)
+            xButton.setAttribute("id", "cancel")
+
+            xButton.onclick =function (){
+                if (mySection) {
+                    mySection.parentNode.removeChild(mySection)
+                }
             }
+
+            document.getElementById("inpu").value = ""
+        }
 
     </script>
 </body>
